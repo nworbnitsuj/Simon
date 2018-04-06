@@ -33,3 +33,29 @@ addEventListener('keydown', function (e) {
       console.log("Button 4 pressed");
     }
   })
+
+/// Decreases button opacity on mousedown and restores original opacity on mouseup ///
+  $("#button1").mousedown(function () {
+          $(this).css('background-color', 'rgba(250, 0, 0, 0.8)');
+        });
+  $("#button1").mouseup(function () {
+          $(this).css('background-color', 'rgba(250, 0, 0, 0.3)');
+        });
+        $("#button2").mousedown(function () {
+                $(this).css('background-color', 'rgba(0,250,154, 0.8)');
+              });
+        $("#button2").mouseup(function () {
+                $(this).css('background-color', 'rgba(0,250,154, 0.3)');
+              });
+              $("#button3").mousedown(function () {
+                      $(this).css('background-color', 'rgba(255,215,0, 0.8)');
+                    });
+              $("#button3").mouseup(function () {
+                      $(this).css('background-color', 'rgba(255,215,0, 0.3)');
+                    });
+                    $("#button4").mousedown(function () {
+                            $(this).css('background-color', 'rgba(0,0,250, 0.8)');
+                          });
+                    $("#button4").mouseup(function () {
+                            $(this).css('background-color', 'rgba(0,0,250, 0.3)');
+                          });

@@ -1,3 +1,15 @@
+.buttonGrid {
+  align-content: center;
+}
+
+.buttonRow1 {
+  display: flex;
+}
+
+.buttonRow2{
+  display: flex;
+}
+
 #button1 {
   width: 100px;
 	height: 100px;

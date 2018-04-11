@@ -3,21 +3,35 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="style.css">
-    <title></title>
+    <title>SIMON!</title>
   </head>
   <body>
 
-<div class="buttonRow1">
-    <div id="button1"></div>
-    <div id="button2"></div>
-</div>
-<div class="buttonRow2">
-  <div id="button3"></div>
-  <div id="button4"></div>
-</div>
+    <div class="gameTitle">
+      <img src="simon.png">
+    </div>
+
+    <div class="buttonRow1">
+      <div id="one" class="dark1"></div>
+      <div id="two" class="dark2"></div>
+    </div>
+
+    <div class="buttonRow2">
+      <div id="three" class="dark3"></div>
+      <div id="four" class="dark4"></div>
+    </div>
 
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script type="text/javascript" src="app.js"></script>
+    <div class="controls">
+    <form id="count"></form>
+    <button id="on" class="btn">ON!</button>
+    <button id="start" class="btn">START!</button>
+  </div>
+
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script type="text/javascript" src="app.js"></script>
+
   </body>
 </html>

@@ -1,61 +1,155 @@
-/// Button 1 click listener ///
-button1.addEventListener("click", (event) => {
-  console.log("Button 1 clicked");
-})
+var random = [];
+var litID = [];
+var lit;
+var clicked = [];
+var i;
+var j=0;
+var count = 1;
+var on;
+var off;
+var x;
 
-/// Button 2 click listener ///
-button2.addEventListener("click", (event) => {
-  console.log("Button 2 clicked");
-})
 
-/// Button 3 click listener ///
-button3.addEventListener("click", (event) => {
-  console.log("Button 3 clicked");
-})
+/// Interval length ///
+function change1() {
+  if (count <= 10) {
+    off = 300;
+    on = 600;
+  }
+  else if (count <= 20){
+    off = 250;
+    on = 500;
+  }
 
-/// Button 4 click listener ///
-button4.addEventListener("click", (event) => {
-  console.log("Button 4 clicked");
-})
+/// Lights squares ///
+x = setInterval(function () {
+  if (random[j] == 1) {
+    lit = 'light1';
+    $('#one').addClass(lit);
+    litID.push(1);
+    setTimeout(function () {
+      $('#one').removeClass(lit);
+    }, off);
+  }
+  else if (random[j] == 2) {
+    lit = 'light2';
+    $('#two').addClass(lit);
+    litID.push(2);
+    setTimeout(function () {
+      $('#two').removeClass(lit);
+    }, off);
+  }
+  else if (random[j] == 3) {
+    lit = 'light3';
+    $('#three').addClass(lit);
+    litID.push(3);
+    setTimeout(function () {
+      $('#three').removeClass(lit);
+    }, off);
+  }
+  else {
+    lit = 'light4';
+    $('#four').addClass(lit);
+    litID.push(4);
+    setTimeout(function () {
+      $('#four').removeClass(lit);
+    }, off);
+  }
 
-/// Button press listeners ///
-addEventListener('keydown', function (e) {
-    if (e.keyCode == 49) {
-      console.log("Button 1 pressed");
+j++;
+if (j>=count) {
+  clearInterval(x);
+}
+}, on);
+
+}
+
+
+/// Checks for accurate clicks, Win condition ///
+function checking() {
+  if (litID.length == clicked.length) {
+    if (litID.join() == clicked.join()) {
+      if (count == 6) {
+        setTimeout(function () {
+          alert("You win!");
+          location.reload();
+        }, 1000);
+      }
+      else {
+        setTimeout(function () {
+          $('#count').text(count + 1);
+          count++;
+          litID = [];
+          clicked = [];
+          j = 0;
+          change1();
+        }, 1000);
+      }
     }
-    if (e.keyCode == 50) {
-      console.log("Button 2 pressed");
+    else {
+      if (strict == 1) {
+        location.reload();
+      }
+      else {
+        setTimeout(function () {
+          $('#count').text('!!');
+          litID = [];
+          clicked = [];
+          j = 0;
+          change1();
+        }, 1000);
+      }
     }
-    if (e.keyCode == 81) {
-      console.log("Button 3 pressed");
-    }
-    if (e.keyCode == 87) {
-      console.log("Button 4 pressed");
-    }
-  })
+  }
+}
 
-/// Decreases button opacity on mousedown and restores original opacity on mouseup ///
-  $("#button1").mousedown(function () {
-          $(this).css('background-color', 'rgba(250, 0, 0, 0.8)');
-        });
-  $("#button1").mouseup(function () {
-          $(this).css('background-color', 'rgba(250, 0, 0, 0.3)');
-        });
-        $("#button2").mousedown(function () {
-                $(this).css('background-color', 'rgba(0,250,154, 0.8)');
-              });
-        $("#button2").mouseup(function () {
-                $(this).css('background-color', 'rgba(0,250,154, 0.3)');
-              });
-              $("#button3").mousedown(function () {
-                      $(this).css('background-color', 'rgba(255,215,0, 0.8)');
-                    });
-              $("#button3").mouseup(function () {
-                      $(this).css('background-color', 'rgba(255,215,0, 0.3)');
-                    });
-                    $("#button4").mousedown(function () {
-                            $(this).css('background-color', 'rgba(0,0,250, 0.8)');
-                          });
-                    $("#button4").mouseup(function () {
-                            $(this).css('background-color', 'rgba(0,0,250, 0.3)');
-                          });
+/// Turn game on ///
+$('#on').on('click', function () {
+  $('#count').text('--');
+  for (i=0; i<20; i++) {
+    random[i] = Math.ceil((Math.random() * 4));
+  }
+
+/// Start game ///
+$('#start').on('click', function () {
+  $('#count').text(count);
+  change1();
+});
+
+/// User plays ///
+$('#one').on('mousedown', function () {
+  $('#one').addClass('light1');
+  clicked.push(1);
+setTimeout(function () {
+  $('#one').removeClass('light1');
+}, 250);
+checking();
+});
+
+$('#two').on('mousedown', function () {
+  $('#two').addClass('light2');
+  clicked.push(2);
+  setTimeout(function () {
+    $('#two').removeClass('light2');
+  }, 250);
+  checking();
+});
+
+$('#three').on('mousedown', function () {
+  $('#three').addClass('light3');
+  clicked.push(3);
+  setTimeout(function () {
+    $('#three').removeClass('light3');
+  }, 250);
+  checking();
+});
+
+$('#four').on('mousedown', function () {
+  $('#four').addClass('light4');
+  clicked.push(4);
+  setTimeout(function () {
+    $('#four').removeClass('light4');
+  }, 250);
+  checking();
+});
+});

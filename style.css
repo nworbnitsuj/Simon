@@ -1,49 +1,100 @@
+.gameTitle {
+  text-align: center;
+  margin-top: 50px;
+}
+
 body {
-  background: rgb(32,32,32);
+  background: black;
 }
 
 .buttonRow1 {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 250px;
+  margin-top: 50px;
 }
 
 .buttonRow2{
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 50px;
 }
 
-#button1 {
-  width: 100px;
-	height: 100px;
-	background: rgba(250, 0, 0, 0.3);
-  margin: 3px;
-  border: solid 5px rgba(250, 0, 0, 1);
-
+#one {
+width: 100px;
+height: 100px;
+margin: 3px;
+border: solid 5px rgba(250, 0, 0, 1);
 }
 
-#button2 {
-  width: 100px;
-	height: 100px;
-	background: rgba(0,250,154, 0.3);
-  margin: 3px;
-  border: solid 5px rgba(0,250,154, 1);
+#two {
+width: 100px;
+height: 100px;
+margin: 3px;
+border: solid 5px rgba(0,250,154, 1);
 }
 
-#button3 {
-  width: 100px;
-	height: 100px;
-	background: rgba(255,215,0, 0.3);
-  margin: 3px;
-  border: solid 5px rgba(255,215,0, 1);
+#three {
+width: 100px;
+height: 100px;
+margin: 3px;
+border: solid 5px rgba(255,215,0, 1);
 }
 
-#button4 {
-  width: 100px;
-  height: 100px;
-  background: rgba(0,0,250, 0.3);
-  margin: 3px;
-  border: solid 5px rgba(0,0,250, 1);
+#four {
+width: 100px;
+height: 100px;
+margin: 3px;
+border: solid 5px rgba(0,0,250, 1);
+}
+
+#count {
+  color: white;
+  font-size: 50px;
+}
+
+.dark1 {
+  background-color: rgba(250, 0, 0, 0.3);
+}
+
+.light1 {
+  background-color: rgba(250, 0, 0, 1);
+}
+
+.dark2 {
+  background-color: rgba(0,250,154, 0.3);
+}
+
+.light2 {
+  background-color: rgba(0,250,154, 1);
+}
+
+.dark3 {
+  background-color: rgba(255,215,0, 0.3);
+}
+
+.light3 {
+  background-color: rgba(255,215,0, 1);
+}
+
+.dark4 {
+  background-color: rgba(0,0,250, 0.3);
+}
+
+.light4 {
+  background-color: rgba(0,0,250, 1);
+}
+
+.controls {
+  text-align: center;
+}
+
+.btn {
+  height: 60px;
+  width: 80px;
+  text-align: center;
+  align-content: center;
+  background-color: orange;
+  color: black;
 }
